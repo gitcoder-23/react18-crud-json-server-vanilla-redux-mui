@@ -126,6 +126,16 @@ const MainHome = () => {
                       <Button
                         variant="contained"
                         size="small"
+                        color="info"
+                        onClick={() => {}}
+                      >
+                        View
+                      </Button>
+                      &nbsp;
+                      <Button
+                        variant="contained"
+                        size="small"
+                        color="warning"
                         onClick={() => {}}
                       >
                         Edit

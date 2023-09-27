@@ -7,6 +7,11 @@ const getUsers = (users) => ({
   payload: users,
 });
 
+const getSingleUser = (oneUser) => ({
+  type: types.GET_SINGLE_USER,
+  payload: oneUser,
+});
+
 export const loadAllUsers = () => {
   return function (dispatch) {
     axios
@@ -17,6 +22,20 @@ export const loadAllUsers = () => {
       })
       .catch((err) => {
         console.log('loadUsers-error=>', err);
+      });
+  };
+};
+
+export const getOneSingleUser = (id) => {
+  return function (dispatch) {
+    axios
+      .get(`${rootApi}/users/${id}`)
+      .then((resp) => {
+        // console.log('getSingleUser->', resp);
+        dispatch(getSingleUser(resp.data));
+      })
+      .catch((err) => {
+        console.log(err);
       });
   };
 };

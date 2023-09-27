@@ -12,7 +12,15 @@ const usersReducers = (state = initialState, action) => {
     case types.GET_USERS:
       return {
         ...state,
-        allUsers: action.payload,
+        allUsers: action.payload.reverse(),
+        isLoading: false,
+        isError: false,
+      };
+
+    case types.GET_SINGLE_USER:
+      return {
+        ...state,
+        singleUser: action.payload,
         isLoading: false,
         isError: false,
       };
