@@ -5,7 +5,7 @@ import { Container } from '@mui/material';
 
 function App() {
   return (
-    <Container maxWidth="sm">
+    <Container maxWidth="lg">
       <div className="App">
         <h1>ReactJs-18 CRUD App Material mui-redux-json-server-dom-6</h1>
         <Routes>
